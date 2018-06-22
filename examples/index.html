@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+        <script src="../jquery.polly-carousel.js" type="text/javascript"></script>
+        <style type="text/css">
+            body {
+                background-color: #333333;
+            }
+
+            #example0>li>a {
+                display: inline-block;
+                position: relative;
+                width: 200px;
+                height: 75px;
+                line-height: 75px;
+                text-align: center;
+                background-color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="example0">
+            <li><a href="">A</a></li>
+            <li><a href="">B</a></li>
+            <li><a href="">C</a></li>
+            <li><a href="">D</a></li>
+        </ul>
+        <br />
+        <button onclick="$('#example0').pollyCarousel({
+            debug: true,
+            onConstructed: function(element) {
+                console.log('constructed');
+            }, onDestructed: function(element) {
+                console.log('destructed');
+            }});">Construct</button>
+        <button onclick="$('#example0').pollyCarousel('reinitialize');">Reconstruct</button>
+        <button onclick="$('#example0').pollyCarousel('destroy');">Destruct</button>
+        <script type="text/javascript">
+            $(function () {
+                //
+            });
+        </script>
+    </body>
+</html>
